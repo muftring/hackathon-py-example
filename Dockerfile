@@ -1,4 +1,4 @@
-FROM rocker/r-ver:4.2.1
+FROM python:3.9.12
 
 WORKDIR /service
 
