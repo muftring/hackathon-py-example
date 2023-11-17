@@ -1,12 +1,11 @@
 #!/usr/bin/env python3.8
 
 import sys
-import shutil
 import pathlib
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from datetime import datetime
 
 print("start of processing")
 
@@ -34,7 +33,9 @@ plt.axhline(y=10.67, color='lightgray', linestyle=':')
 sns.stripplot('study', 'WBC', data=df, jitter=0.2)
 sns.despine()
 
-output_file = f"{output_folder}/output.png"
-plt.savefig(output_file)
+now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+output_file_name = f"{output_folder}/result_{now}.png"
+print(f"saving result to {output_file_name}")
+plt.savefig(output_file_name)
 
 print("end of processing")
