@@ -40,6 +40,8 @@ COPY . .
 
 RUN ls /service
 
+RUN pip install -r /service/requirements.txt
+
 RUN go build -o /service/main main.go
 
 RUN mkdir -p data
